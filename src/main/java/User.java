@@ -18,7 +18,7 @@ public class User extends BaseAPI {
         Allure.addAttachment("Email : ", email);
         Allure.addAttachment("Password : ", password);
         Allure.addAttachment("Name : ", name);
-        return new User( email, password, name);
+        return new User(email, password, name);
     }
     public ValidatableResponse deleteUser(String accessToken) {
         return given()

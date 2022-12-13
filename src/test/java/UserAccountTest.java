@@ -1,5 +1,4 @@
-import POM.AccountPage;
-import POM.HomePage;
+import pom.HomePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.junit4.DisplayName;
@@ -50,7 +49,7 @@ public class UserAccountTest {
         String url = homePage.clickAccountButton()
                 .fillLoginForm(user.getEmail(), user.getPassword())
                 .clickLoginButton()
-                .clickLogoBurger();
+                .clickLogoBurgerGetCurrentUrl();
         assertEquals(HomePage.URL, url);
     }
     @Test
@@ -61,7 +60,7 @@ public class UserAccountTest {
                 .fillLoginForm(user.getEmail(), user.getPassword())
                 .clickLoginButton(Condition.hidden);
         boolean isDisplayed = homePage.clickAccountButtonGoAccountPage()
-                .clickLogoutButton(Condition.hidden);
+                .clickLogoutButtonIsDisplayed(Condition.hidden);
         assertFalse(isDisplayed);
     }
 }

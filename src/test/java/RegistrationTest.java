@@ -1,4 +1,4 @@
-import POM.HomePage;
+import pom.HomePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.junit4.DisplayName;
@@ -33,7 +33,9 @@ public class RegistrationTest {
     public void registerUserByValidCredentials() {
         boolean isDisplayed = homePage.clickLoginButton()
                 .clickRegisterLink()
-                .fillRegisterForm(user.getName(), user.getEmail(), user.getPassword())
+                .setName(user.getName())
+                .setEmail(user.getEmail())
+                .setPassword(user.getPassword())
                 .clickRegisterButton(Condition.hidden);
         assertFalse(isDisplayed);
         response = user.loginUser(user);
@@ -46,11 +48,13 @@ public class RegistrationTest {
         final String password = RandomStringUtils.randomAlphabetic(5);
         boolean isDisplayed = homePage.clickLoginButton()
                 .clickRegisterLink()
-                .fillRegisterForm(user.getName(), user.getEmail(), password)
+                .setName(user.getName())
+                .setEmail(user.getEmail())
+                .setPassword(password)
                 .clickRegisterButton(Condition.visible);
         if(isDisplayed){
-            }
-            else{
+        }
+        else{
             response = user.loginUser(user);
             accessToken = response.extract().path("accessToken");
             user.deleteUser(StringUtils.substringAfter(accessToken, " "));

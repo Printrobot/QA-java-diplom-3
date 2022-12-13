@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: UserAccountTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.346 s - in UserAccountTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.186 s - in UserAccountTest

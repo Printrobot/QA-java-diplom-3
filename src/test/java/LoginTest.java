@@ -1,4 +1,4 @@
-import POM.HomePage;
+import pom.HomePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.junit4.DisplayName;
